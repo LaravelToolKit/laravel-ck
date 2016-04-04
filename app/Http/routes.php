@@ -21,3 +21,7 @@ Route::get('/test', function(){
     $test = new SimpleTest();
     return $test->echoPhrase("test class");
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
