@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.29 on 2016-04-05.
+ * Generated for Laravel 5.2.29 on 2016-04-06.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11333,14 +11333,97 @@ namespace {
     class Form extends \Collective\Html\FormFacade{
         
         /**
-         * Open up a new HTML form.
+         * Allows user to set the novalidate option for every form generated with
+         * the form open method, so developers can skin HTML5 validation, in order
+         * to test backend validation in a local or development environment.
+         *
+         * @param null $value
+         * @return bool|null 
+         * @static 
+         */
+        public static function novalidate($value = null){
+            return \Styde\Html\FormBuilder::novalidate($value);
+        }
+        
+        /**
+         * Open up a new HTML form and pass the optional novalidate option.
+         * 
+         * This methods relies on the original Form::open method of the Laravel
+         * Collective component.
          *
          * @param array $options
-         * @return \Illuminate\Support\HtmlString 
+         * @return string 
          * @static 
          */
         public static function open($options = array()){
-            return \Collective\Html\FormBuilder::open($options);
+            return \Styde\Html\FormBuilder::open($options);
+        }
+        
+        /**
+         * Get the protected model attribute
+         *
+         * @static 
+         */
+        public static function getModel(){
+            return \Styde\Html\FormBuilder::getModel();
+        }
+        
+        /**
+         * Create a time input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function time($name, $value = null, $options = array()){
+            return \Styde\Html\FormBuilder::time($name, $value, $options);
+        }
+        
+        /**
+         * Create a list of radios.
+         * 
+         * This function is very similar to Form::select but it generates a
+         * collection of radios instead of options.
+         * 
+         * i.e. Form::radios('status', ['a' => 'Active', 'i' => 'Inactive'])
+         * 
+         * You can pass 'inline' as a value of the attribute's array, to set the
+         * radios as inline (they'll be rendered with the 'radios-inline' template).
+         *
+         * @param string $name
+         * @param array $options
+         * @param string $selected
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function radios($name, $options = array(), $selected = null, $attributes = array()){
+            return \Styde\Html\FormBuilder::radios($name, $options, $selected, $attributes);
+        }
+        
+        /**
+         * Create a list of checkboxes.
+         * 
+         * This function is similar to Form::select, but it generates a collection
+         * of checkboxes instead of options.
+         * 
+         * i.e. Form::checkboxes('status', ['a' => 'Active', 'i' => 'Inactive']);
+         * 
+         * You can pass 'inline' as a value of the attribute's array, to set the
+         * checkboxes as inline (they'll be rendered using the 'checkboxes-inline'
+         * template).
+         *
+         * @param string $name
+         * @param array $options
+         * @param string $selected
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function checkboxes($name, $options = array(), $selected = null, $attributes = array()){
+            return \Styde\Html\FormBuilder::checkboxes($name, $options, $selected, $attributes);
         }
         
         /**
@@ -11352,7 +11435,8 @@ namespace {
          * @static 
          */
         public static function model($model, $options = array()){
-            return \Collective\Html\FormBuilder::model($model, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::model($model, $options);
         }
         
         /**
@@ -11363,7 +11447,8 @@ namespace {
          * @static 
          */
         public static function setModel($model){
-            \Collective\Html\FormBuilder::setModel($model);
+            //Method inherited from \Collective\Html\FormBuilder            
+            \Styde\Html\FormBuilder::setModel($model);
         }
         
         /**
@@ -11373,7 +11458,8 @@ namespace {
          * @static 
          */
         public static function close(){
-            return \Collective\Html\FormBuilder::close();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::close();
         }
         
         /**
@@ -11383,7 +11469,8 @@ namespace {
          * @static 
          */
         public static function token(){
-            return \Collective\Html\FormBuilder::token();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::token();
         }
         
         /**
@@ -11396,7 +11483,8 @@ namespace {
          * @static 
          */
         public static function label($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::label($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::label($name, $value, $options);
         }
         
         /**
@@ -11410,7 +11498,8 @@ namespace {
          * @static 
          */
         public static function input($type, $name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::input($type, $name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::input($type, $name, $value, $options);
         }
         
         /**
@@ -11423,7 +11512,8 @@ namespace {
          * @static 
          */
         public static function text($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::text($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::text($name, $value, $options);
         }
         
         /**
@@ -11435,7 +11525,8 @@ namespace {
          * @static 
          */
         public static function password($name, $options = array()){
-            return \Collective\Html\FormBuilder::password($name, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::password($name, $options);
         }
         
         /**
@@ -11448,7 +11539,8 @@ namespace {
          * @static 
          */
         public static function hidden($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::hidden($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::hidden($name, $value, $options);
         }
         
         /**
@@ -11461,7 +11553,8 @@ namespace {
          * @static 
          */
         public static function email($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::email($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::email($name, $value, $options);
         }
         
         /**
@@ -11474,7 +11567,8 @@ namespace {
          * @static 
          */
         public static function tel($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::tel($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::tel($name, $value, $options);
         }
         
         /**
@@ -11487,7 +11581,8 @@ namespace {
          * @static 
          */
         public static function number($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::number($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::number($name, $value, $options);
         }
         
         /**
@@ -11500,7 +11595,8 @@ namespace {
          * @static 
          */
         public static function date($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::date($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::date($name, $value, $options);
         }
         
         /**
@@ -11513,7 +11609,8 @@ namespace {
          * @static 
          */
         public static function datetime($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::datetime($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::datetime($name, $value, $options);
         }
         
         /**
@@ -11526,20 +11623,8 @@ namespace {
          * @static 
          */
         public static function datetimeLocal($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::datetimeLocal($name, $value, $options);
-        }
-        
-        /**
-         * Create a time input field.
-         *
-         * @param string $name
-         * @param string $value
-         * @param array $options
-         * @return \Illuminate\Support\HtmlString 
-         * @static 
-         */
-        public static function time($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::time($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::datetimeLocal($name, $value, $options);
         }
         
         /**
@@ -11552,7 +11637,8 @@ namespace {
          * @static 
          */
         public static function url($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::url($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::url($name, $value, $options);
         }
         
         /**
@@ -11564,7 +11650,8 @@ namespace {
          * @static 
          */
         public static function file($name, $options = array()){
-            return \Collective\Html\FormBuilder::file($name, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::file($name, $options);
         }
         
         /**
@@ -11577,7 +11664,8 @@ namespace {
          * @static 
          */
         public static function textarea($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::textarea($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::textarea($name, $value, $options);
         }
         
         /**
@@ -11591,7 +11679,8 @@ namespace {
          * @static 
          */
         public static function select($name, $list = array(), $selected = null, $options = array()){
-            return \Collective\Html\FormBuilder::select($name, $list, $selected, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::select($name, $list, $selected, $options);
         }
         
         /**
@@ -11606,7 +11695,8 @@ namespace {
          * @static 
          */
         public static function selectRange($name, $begin, $end, $selected = null, $options = array()){
-            return \Collective\Html\FormBuilder::selectRange($name, $begin, $end, $selected, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::selectRange($name, $begin, $end, $selected, $options);
         }
         
         /**
@@ -11621,7 +11711,8 @@ namespace {
          * @static 
          */
         public static function selectYear(){
-            return \Collective\Html\FormBuilder::selectYear();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::selectYear();
         }
         
         /**
@@ -11635,7 +11726,8 @@ namespace {
          * @static 
          */
         public static function selectMonth($name, $selected = null, $options = array(), $format = '%B'){
-            return \Collective\Html\FormBuilder::selectMonth($name, $selected, $options, $format);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::selectMonth($name, $selected, $options, $format);
         }
         
         /**
@@ -11648,7 +11740,8 @@ namespace {
          * @static 
          */
         public static function getSelectOption($display, $value, $selected){
-            return \Collective\Html\FormBuilder::getSelectOption($display, $value, $selected);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::getSelectOption($display, $value, $selected);
         }
         
         /**
@@ -11662,7 +11755,8 @@ namespace {
          * @static 
          */
         public static function checkbox($name, $value = 1, $checked = null, $options = array()){
-            return \Collective\Html\FormBuilder::checkbox($name, $value, $checked, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::checkbox($name, $value, $checked, $options);
         }
         
         /**
@@ -11676,7 +11770,8 @@ namespace {
          * @static 
          */
         public static function radio($name, $value = null, $checked = null, $options = array()){
-            return \Collective\Html\FormBuilder::radio($name, $value, $checked, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::radio($name, $value, $checked, $options);
         }
         
         /**
@@ -11688,7 +11783,8 @@ namespace {
          * @static 
          */
         public static function reset($value, $attributes = array()){
-            return \Collective\Html\FormBuilder::reset($value, $attributes);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::reset($value, $attributes);
         }
         
         /**
@@ -11701,7 +11797,8 @@ namespace {
          * @static 
          */
         public static function image($url, $name = null, $attributes = array()){
-            return \Collective\Html\FormBuilder::image($url, $name, $attributes);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::image($url, $name, $attributes);
         }
         
         /**
@@ -11714,7 +11811,8 @@ namespace {
          * @static 
          */
         public static function color($name, $value = null, $options = array()){
-            return \Collective\Html\FormBuilder::color($name, $value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::color($name, $value, $options);
         }
         
         /**
@@ -11726,7 +11824,8 @@ namespace {
          * @static 
          */
         public static function submit($value = null, $options = array()){
-            return \Collective\Html\FormBuilder::submit($value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::submit($value, $options);
         }
         
         /**
@@ -11738,7 +11837,8 @@ namespace {
          * @static 
          */
         public static function button($value = null, $options = array()){
-            return \Collective\Html\FormBuilder::button($value, $options);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::button($value, $options);
         }
         
         /**
@@ -11750,7 +11850,8 @@ namespace {
          * @static 
          */
         public static function getIdAttribute($name, $attributes){
-            return \Collective\Html\FormBuilder::getIdAttribute($name, $attributes);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::getIdAttribute($name, $attributes);
         }
         
         /**
@@ -11762,7 +11863,8 @@ namespace {
          * @static 
          */
         public static function getValueAttribute($name, $value = null){
-            return \Collective\Html\FormBuilder::getValueAttribute($name, $value);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::getValueAttribute($name, $value);
         }
         
         /**
@@ -11773,7 +11875,8 @@ namespace {
          * @static 
          */
         public static function old($name){
-            return \Collective\Html\FormBuilder::old($name);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::old($name);
         }
         
         /**
@@ -11783,7 +11886,8 @@ namespace {
          * @static 
          */
         public static function oldInputIsEmpty(){
-            return \Collective\Html\FormBuilder::oldInputIsEmpty();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::oldInputIsEmpty();
         }
         
         /**
@@ -11793,7 +11897,8 @@ namespace {
          * @static 
          */
         public static function getSessionStore(){
-            return \Collective\Html\FormBuilder::getSessionStore();
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::getSessionStore();
         }
         
         /**
@@ -11804,7 +11909,8 @@ namespace {
          * @static 
          */
         public static function setSessionStore($session){
-            return \Collective\Html\FormBuilder::setSessionStore($session);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::setSessionStore($session);
         }
         
         /**
@@ -11816,7 +11922,8 @@ namespace {
          * @static 
          */
         public static function macro($name, $macro){
-            \Collective\Html\FormBuilder::macro($name, $macro);
+            //Method inherited from \Collective\Html\FormBuilder            
+            \Styde\Html\FormBuilder::macro($name, $macro);
         }
         
         /**
@@ -11827,7 +11934,8 @@ namespace {
          * @static 
          */
         public static function hasMacro($name){
-            return \Collective\Html\FormBuilder::hasMacro($name);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::hasMacro($name);
         }
         
         /**
@@ -11840,7 +11948,8 @@ namespace {
          * @static 
          */
         public static function macroCall($method, $parameters){
-            return \Collective\Html\FormBuilder::macroCall($method, $parameters);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::macroCall($method, $parameters);
         }
         
         /**
@@ -11853,7 +11962,8 @@ namespace {
          * @static 
          */
         public static function component($name, $view, $signature){
-            \Collective\Html\FormBuilder::component($name, $view, $signature);
+            //Method inherited from \Collective\Html\FormBuilder            
+            \Styde\Html\FormBuilder::component($name, $view, $signature);
         }
         
         /**
@@ -11864,7 +11974,8 @@ namespace {
          * @static 
          */
         public static function hasComponent($name){
-            return \Collective\Html\FormBuilder::hasComponent($name);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::hasComponent($name);
         }
         
         /**
@@ -11877,13 +11988,48 @@ namespace {
          * @static 
          */
         public static function componentCall($method, $parameters){
-            return \Collective\Html\FormBuilder::componentCall($method, $parameters);
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Styde\Html\FormBuilder::componentCall($method, $parameters);
         }
         
     }
 
 
     class Html extends \Collective\Html\HtmlFacade{
+        
+        /**
+         * Builds an HTML class attribute dynamically.
+         * 
+         * This method is similar to the ng-class attribute of AngularJS
+         * 
+         * You can specify one or more CSS classes as a key and a condition as a
+         * value. If the condition is true the class(es) will be used, otherwise
+         * they will be skipped. You can also set the static class(es) (those which
+         * we'll always be used) as a value.
+         * 
+         * Example:
+         * 
+         * {!! Html::classes(['home' => true, 'main', 'dont-use-this' => false]) !!}
+         * 
+         * Returns:
+         * 
+         *  class="home main".
+         * 
+         * Notice that this function returns an empty space before the class
+         * attribute. So you have to do this:
+         * 
+         * <p{!! classes(..) !!}> and not this: <p {{!! classes(..) !!}>
+         * 
+         * If no classes are evaluated as TRUE then this function will return an
+         * empty string.
+         *
+         * @param array $classes
+         * @return string 
+         * @static 
+         */
+        public static function classes($classes){
+            return \Styde\Html\HtmlBuilder::classes($classes);
+        }
         
         /**
          * Convert an HTML string to entities.
@@ -11893,7 +12039,8 @@ namespace {
          * @static 
          */
         public static function entities($value){
-            return \Collective\Html\HtmlBuilder::entities($value);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::entities($value);
         }
         
         /**
@@ -11904,7 +12051,8 @@ namespace {
          * @static 
          */
         public static function decode($value){
-            return \Collective\Html\HtmlBuilder::decode($value);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::decode($value);
         }
         
         /**
@@ -11917,7 +12065,8 @@ namespace {
          * @static 
          */
         public static function script($url, $attributes = array(), $secure = null){
-            return \Collective\Html\HtmlBuilder::script($url, $attributes, $secure);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::script($url, $attributes, $secure);
         }
         
         /**
@@ -11930,7 +12079,8 @@ namespace {
          * @static 
          */
         public static function style($url, $attributes = array(), $secure = null){
-            return \Collective\Html\HtmlBuilder::style($url, $attributes, $secure);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::style($url, $attributes, $secure);
         }
         
         /**
@@ -11944,7 +12094,8 @@ namespace {
          * @static 
          */
         public static function image($url, $alt = null, $attributes = array(), $secure = null){
-            return \Collective\Html\HtmlBuilder::image($url, $alt, $attributes, $secure);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::image($url, $alt, $attributes, $secure);
         }
         
         /**
@@ -11957,7 +12108,8 @@ namespace {
          * @static 
          */
         public static function favicon($url, $attributes = array(), $secure = null){
-            return \Collective\Html\HtmlBuilder::favicon($url, $attributes, $secure);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::favicon($url, $attributes, $secure);
         }
         
         /**
@@ -11971,7 +12123,8 @@ namespace {
          * @static 
          */
         public static function link($url, $title = null, $attributes = array(), $secure = null){
-            return \Collective\Html\HtmlBuilder::link($url, $title, $attributes, $secure);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::link($url, $title, $attributes, $secure);
         }
         
         /**
@@ -11984,7 +12137,8 @@ namespace {
          * @static 
          */
         public static function secureLink($url, $title = null, $attributes = array()){
-            return \Collective\Html\HtmlBuilder::secureLink($url, $title, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::secureLink($url, $title, $attributes);
         }
         
         /**
@@ -11998,7 +12152,8 @@ namespace {
          * @static 
          */
         public static function linkAsset($url, $title = null, $attributes = array(), $secure = null){
-            return \Collective\Html\HtmlBuilder::linkAsset($url, $title, $attributes, $secure);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::linkAsset($url, $title, $attributes, $secure);
         }
         
         /**
@@ -12011,7 +12166,8 @@ namespace {
          * @static 
          */
         public static function linkSecureAsset($url, $title = null, $attributes = array()){
-            return \Collective\Html\HtmlBuilder::linkSecureAsset($url, $title, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::linkSecureAsset($url, $title, $attributes);
         }
         
         /**
@@ -12025,7 +12181,8 @@ namespace {
          * @static 
          */
         public static function linkRoute($name, $title = null, $parameters = array(), $attributes = array()){
-            return \Collective\Html\HtmlBuilder::linkRoute($name, $title, $parameters, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::linkRoute($name, $title, $parameters, $attributes);
         }
         
         /**
@@ -12039,7 +12196,8 @@ namespace {
          * @static 
          */
         public static function linkAction($action, $title = null, $parameters = array(), $attributes = array()){
-            return \Collective\Html\HtmlBuilder::linkAction($action, $title, $parameters, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::linkAction($action, $title, $parameters, $attributes);
         }
         
         /**
@@ -12052,7 +12210,8 @@ namespace {
          * @static 
          */
         public static function mailto($email, $title = null, $attributes = array()){
-            return \Collective\Html\HtmlBuilder::mailto($email, $title, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::mailto($email, $title, $attributes);
         }
         
         /**
@@ -12063,7 +12222,8 @@ namespace {
          * @static 
          */
         public static function email($email){
-            return \Collective\Html\HtmlBuilder::email($email);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::email($email);
         }
         
         /**
@@ -12075,7 +12235,8 @@ namespace {
          * @static 
          */
         public static function ol($list, $attributes = array()){
-            return \Collective\Html\HtmlBuilder::ol($list, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::ol($list, $attributes);
         }
         
         /**
@@ -12087,7 +12248,8 @@ namespace {
          * @static 
          */
         public static function ul($list, $attributes = array()){
-            return \Collective\Html\HtmlBuilder::ul($list, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::ul($list, $attributes);
         }
         
         /**
@@ -12099,7 +12261,8 @@ namespace {
          * @static 
          */
         public static function dl($list, $attributes = array()){
-            return \Collective\Html\HtmlBuilder::dl($list, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::dl($list, $attributes);
         }
         
         /**
@@ -12110,7 +12273,8 @@ namespace {
          * @static 
          */
         public static function attributes($attributes){
-            return \Collective\Html\HtmlBuilder::attributes($attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::attributes($attributes);
         }
         
         /**
@@ -12121,7 +12285,8 @@ namespace {
          * @static 
          */
         public static function obfuscate($value){
-            return \Collective\Html\HtmlBuilder::obfuscate($value);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::obfuscate($value);
         }
         
         /**
@@ -12134,7 +12299,8 @@ namespace {
          * @static 
          */
         public static function meta($name, $content, $attributes = array()){
-            return \Collective\Html\HtmlBuilder::meta($name, $content, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::meta($name, $content, $attributes);
         }
         
         /**
@@ -12147,7 +12313,8 @@ namespace {
          * @static 
          */
         public static function tag($tag, $content, $attributes = array()){
-            return \Collective\Html\HtmlBuilder::tag($tag, $content, $attributes);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::tag($tag, $content, $attributes);
         }
         
         /**
@@ -12159,7 +12326,8 @@ namespace {
          * @static 
          */
         public static function macro($name, $macro){
-            \Collective\Html\HtmlBuilder::macro($name, $macro);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            \Styde\Html\HtmlBuilder::macro($name, $macro);
         }
         
         /**
@@ -12170,7 +12338,8 @@ namespace {
          * @static 
          */
         public static function hasMacro($name){
-            return \Collective\Html\HtmlBuilder::hasMacro($name);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::hasMacro($name);
         }
         
         /**
@@ -12183,7 +12352,8 @@ namespace {
          * @static 
          */
         public static function macroCall($method, $parameters){
-            return \Collective\Html\HtmlBuilder::macroCall($method, $parameters);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::macroCall($method, $parameters);
         }
         
         /**
@@ -12196,7 +12366,8 @@ namespace {
          * @static 
          */
         public static function component($name, $view, $signature){
-            \Collective\Html\HtmlBuilder::component($name, $view, $signature);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            \Styde\Html\HtmlBuilder::component($name, $view, $signature);
         }
         
         /**
@@ -12207,7 +12378,8 @@ namespace {
          * @static 
          */
         public static function hasComponent($name){
-            return \Collective\Html\HtmlBuilder::hasComponent($name);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::hasComponent($name);
         }
         
         /**
@@ -12220,7 +12392,557 @@ namespace {
          * @static 
          */
         public static function componentCall($method, $parameters){
-            return \Collective\Html\HtmlBuilder::componentCall($method, $parameters);
+            //Method inherited from \Collective\Html\HtmlBuilder            
+            return \Styde\Html\HtmlBuilder::componentCall($method, $parameters);
+        }
+        
+    }
+
+
+    class Excel extends \Maatwebsite\Excel\Facades\Excel{
+        
+        /**
+         * Create a new file
+         *
+         * @param $filename
+         * @param callable|null $callback
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */
+        public static function create($filename, $callback = null){
+            return \Maatwebsite\Excel\Excel::create($filename, $callback);
+        }
+        
+        /**
+         * Load an existing file
+         *
+         * @param string $file The file we want to load
+         * @param callback|null $callback
+         * @param string|null $encoding
+         * @param bool $noBasePath
+         * @return \Maatwebsite\Excel\LaravelExcelReader 
+         * @static 
+         */
+        public static function load($file, $callback = null, $encoding = null, $noBasePath = false){
+            return \Maatwebsite\Excel\Excel::load($file, $callback, $encoding, $noBasePath);
+        }
+        
+        /**
+         * Set select sheets
+         *
+         * @param $sheets
+         * @return \Maatwebsite\Excel\LaravelExcelReader 
+         * @static 
+         */
+        public static function selectSheets($sheets = array()){
+            return \Maatwebsite\Excel\Excel::selectSheets($sheets);
+        }
+        
+        /**
+         * Select sheets by index
+         *
+         * @param array $sheets
+         * @return $this 
+         * @static 
+         */
+        public static function selectSheetsByIndex($sheets = array()){
+            return \Maatwebsite\Excel\Excel::selectSheetsByIndex($sheets);
+        }
+        
+        /**
+         * Batch import
+         *
+         * @param $files
+         * @param callback $callback
+         * @return \Maatwebsite\Excel\PHPExcel 
+         * @static 
+         */
+        public static function batch($files, $callback){
+            return \Maatwebsite\Excel\Excel::batch($files, $callback);
+        }
+        
+        /**
+         * Create a new file and share a view
+         *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */
+        public static function shareView($view, $data = array(), $mergeData = array()){
+            return \Maatwebsite\Excel\Excel::shareView($view, $data, $mergeData);
+        }
+        
+        /**
+         * Create a new file and load a view
+         *
+         * @param string $view
+         * @param array $data
+         * @param array $mergeData
+         * @return \Maatwebsite\Excel\LaravelExcelWriter 
+         * @static 
+         */
+        public static function loadView($view, $data = array(), $mergeData = array()){
+            return \Maatwebsite\Excel\Excel::loadView($view, $data, $mergeData);
+        }
+        
+        /**
+         * Set filters
+         *
+         * @param array $filters
+         * @return \Maatwebsite\Excel\Excel 
+         * @static 
+         */
+        public static function registerFilters($filters = array()){
+            return \Maatwebsite\Excel\Excel::registerFilters($filters);
+        }
+        
+        /**
+         * Enable certain filters
+         *
+         * @param string|array $filter
+         * @param bool|false|string $class
+         * @return \Maatwebsite\Excel\Excel 
+         * @static 
+         */
+        public static function filter($filter, $class = false){
+            return \Maatwebsite\Excel\Excel::filter($filter, $class);
+        }
+        
+        /**
+         * Get register, enabled (or both) filters
+         *
+         * @param string|boolean $key [description]
+         * @return array 
+         * @static 
+         */
+        public static function getFilters($key = false){
+            return \Maatwebsite\Excel\Excel::getFilters($key);
+        }
+        
+    }
+
+
+    class Alert extends \Styde\Html\Facades\Alert{
+        
+        /**
+         * Set the translator component (this is optional)
+         *
+         * @param \Illuminate\Translation\Translator $lang
+         * @static 
+         */
+        public static function setLang($lang){
+            return \Styde\Html\Alert\Container::setLang($lang);
+        }
+        
+        /**
+         * Creates and returns a new Alert Message
+         *
+         * @param string $message
+         * @param string $type
+         * @param array $args
+         * @return \Styde\Html\Alert\Message 
+         * @static 
+         */
+        public static function message($message = '', $type = 'success', $args = array()){
+            return \Styde\Html\Alert\Container::message($message, $type, $args);
+        }
+        
+        /**
+         * Adds a new message to the container's collection
+         *
+         * @param $message
+         * @return \Styde\Html\Alert\Message 
+         * @static 
+         */
+        public static function add($message){
+            return \Styde\Html\Alert\Container::add($message);
+        }
+        
+        /**
+         * Attempts to translate texts if the translator component is set and the
+         * lang key is found, otherwise returns the original text.
+         *
+         * @param $text
+         * @param array $parameters
+         * @return string 
+         * @static 
+         */
+        public static function translate($text, $parameters = array()){
+            return \Styde\Html\Alert\Container::translate($text, $parameters);
+        }
+        
+        /**
+         * Renders a view
+         *
+         * @param $template
+         * @param array $data
+         * @return string 
+         * @static 
+         */
+        public static function view($template, $data = array()){
+            return \Styde\Html\Alert\Container::view($template, $data);
+        }
+        
+        /**
+         * Retrieves all the alert messages in a raw (array) format for this and the
+         * previous requests.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function toArray(){
+            return \Styde\Html\Alert\Container::toArray();
+        }
+        
+        /**
+         * Clear the messages of this and the previous requests
+         *
+         * @static 
+         */
+        public static function clearMessages(){
+            return \Styde\Html\Alert\Container::clearMessages();
+        }
+        
+        /**
+         * Persist all the messages through the handler
+         *
+         * @static 
+         */
+        public static function push(){
+            return \Styde\Html\Alert\Container::push();
+        }
+        
+        /**
+         * Clear and render the alert messages of this and the previous requests.
+         *
+         * @param string|null $custom
+         * @return string 
+         * @static 
+         */
+        public static function render($custom = null){
+            return \Styde\Html\Alert\Container::render($custom);
+        }
+        
+    }
+
+
+    class Field extends \Styde\Html\Facades\Field{
+        
+        /**
+         * Set the attribute abbreviation options i.e.:
+         * ['ph' => 'placeholder', 'req' => 'required']
+         * 
+         * You can set these values in the config file
+         *
+         * @param array $abbreviations
+         * @static 
+         */
+        public static function setAbbreviations($abbreviations){
+            return \Styde\Html\FieldBuilder::setAbbreviations($abbreviations);
+        }
+        
+        /**
+         * Set the default CSS classes for each input type.
+         * 
+         * You can set these values in the config file.
+         *
+         * @param array $cssClasses
+         * @static 
+         */
+        public static function setCssClasses($cssClasses){
+            return \Styde\Html\FieldBuilder::setCssClasses($cssClasses);
+        }
+        
+        /**
+         * Set the default templates for each input type.
+         * 
+         * You can set these values in the config file.
+         *
+         * @param array $templates
+         * @static 
+         */
+        public static function setTemplates($templates){
+            return \Styde\Html\FieldBuilder::setTemplates($templates);
+        }
+        
+        /**
+         * Set the current session errors. If a field contains errors,
+         * they'll be render as part of the field's template.
+         * 
+         * You must set them as an associative array of arrays, i.e.:
+         * 
+         * [
+         *   'email' => ['Invalid email']
+         *   'password' => ['Needs upper case', 'Needs lower case', 'Needs klingon']
+         * ]
+         *
+         * @param array $errors
+         * @static 
+         */
+        public static function setErrors($errors){
+            return \Styde\Html\FieldBuilder::setErrors($errors);
+        }
+        
+        /**
+         * Create a form input field.
+         *
+         * @param string $type
+         * @param string $name
+         * @param string $value
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function input($type, $name, $value = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::input($type, $name, $value, $attributes, $extra);
+        }
+        
+        /**
+         * Create a text input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function text($name, $value = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::text($name, $value, $attributes, $extra);
+        }
+        
+        /**
+         * Create a password input field.
+         *
+         * @param string $name
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function password($name, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::password($name, $attributes, $extra);
+        }
+        
+        /**
+         * Create a hidden input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function hidden($name, $value = null, $attributes = array()){
+            return \Styde\Html\FieldBuilder::hidden($name, $value, $attributes);
+        }
+        
+        /**
+         * Create an e-mail input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function email($name, $value = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::email($name, $value, $attributes, $extra);
+        }
+        
+        /**
+         * Create a URL input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function url($name, $value = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::url($name, $value, $attributes, $extra);
+        }
+        
+        /**
+         * Create a file input field.
+         *
+         * @param string $name
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function file($name, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::file($name, $attributes, $extra);
+        }
+        
+        /**
+         * Create a textarea input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function textarea($name, $value = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::textarea($name, $value, $attributes, $extra);
+        }
+        
+        /**
+         * Create a radios field.
+         *
+         * @param string $name
+         * @param array $options
+         * @param string $selected
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function radios($name, $options = array(), $selected = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::radios($name, $options, $selected, $attributes, $extra);
+        }
+        
+        /**
+         * Create a select box field.
+         *
+         * @param string $name
+         * @param array $options
+         * @param string $selected
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function select($name, $options = array(), $selected = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::select($name, $options, $selected, $attributes, $extra);
+        }
+        
+        /**
+         * Create a multiple select field
+         *
+         * @param $name
+         * @param array $options
+         * @param array $selected
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function selectMultiple($name, $options = array(), $selected = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::selectMultiple($name, $options, $selected, $attributes, $extra);
+        }
+        
+        /**
+         * Create a checkboxes field.
+         *
+         * @param string $name
+         * @param array $options
+         * @param string $selected
+         * @param array $attributes
+         * @param array $extra
+         * @return string 
+         * @static 
+         */
+        public static function checkboxes($name, $options = array(), $selected = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::checkboxes($name, $options, $selected, $attributes, $extra);
+        }
+        
+        /**
+         * Create a checkbox input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param null $selected
+         * @param array $attributes
+         * @param array $extra
+         * @internal param bool $checked
+         * @return string 
+         * @static 
+         */
+        public static function checkbox($name, $value = 1, $selected = null, $attributes = array(), $extra = array()){
+            return \Styde\Html\FieldBuilder::checkbox($name, $value, $selected, $attributes, $extra);
+        }
+        
+        /**
+         * Set the AccessHandler implementation
+         *
+         * @param \Styde\Html\AccessHandler $accessHandler
+         * @static 
+         */
+        public static function setAccessHandler($accessHandler){
+            return \Styde\Html\FieldBuilder::setAccessHandler($accessHandler);
+        }
+        
+        /**
+         * Returns true if the $accessHandler is not set, otherwise it relies on the
+         * handler implementation to check if the user should has access or not.
+         *
+         * @param array $options
+         * @return bool 
+         * @static 
+         */
+        public static function checkAccess($options){
+            return \Styde\Html\FieldBuilder::checkAccess($options);
+        }
+        
+    }
+
+
+    class Menu extends \Styde\Html\Facades\Menu{
+        
+        /**
+         * Set the translator object
+         *
+         * @param \Styde\Html\Menu\Lang $lang
+         * @static 
+         */
+        public static function setLang($lang){
+            return \Styde\Html\Menu\MenuGenerator::setLang($lang);
+        }
+        
+        /**
+         * Makes a new menu.
+         * 
+         * As the first argument you can send an array of items or reference a
+         * configuration key where you can store the items array.
+         *
+         * @param array|string $items array of items or a config file key
+         * @param string|null $classes main CSS classes for the menu
+         * @return \Styde\Html\Menu\Menu 
+         * @static 
+         */
+        public static function make($items, $classes = null){
+            return \Styde\Html\Menu\MenuGenerator::make($items, $classes);
+        }
+        
+        /**
+         * Set the AccessHandler implementation
+         *
+         * @param \Styde\Html\Menu\AccessHandler $accessHandler
+         * @static 
+         */
+        public static function setAccessHandler($accessHandler){
+            return \Styde\Html\Menu\MenuGenerator::setAccessHandler($accessHandler);
+        }
+        
+        /**
+         * Returns true if the $accessHandler is not set, otherwise it relies on the
+         * handler implementation to check if the user should has access or not.
+         *
+         * @param array $options
+         * @return bool 
+         * @static 
+         */
+        public static function checkAccess($options){
+            return \Styde\Html\Menu\MenuGenerator::checkAccess($options);
         }
         
     }

@@ -7,29 +7,17 @@
   ],
   "license": "MIT",
   "type": "project",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/LaravelToolKit/simple_pack.git"
-    }
-  ],
   "require": {
     "php": ">=5.5.9",
     "laravel/framework": "5.2.*",
-    "barryvdh/laravel-debugbar": "^2.2",
-    "laravelcollective/html": "^5.2",
-    "doctrine/dbal": "^2.5",
-    "barryvdh/laravel-ide-helper": "^2.1",
-    "maatwebsite/excel": "^2.1"
+    "shawnsandy/laravel-install-kit": "^0.2.2"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
     "phpunit/phpunit": "~4.0",
     "symfony/css-selector": "2.8.*|3.0.*",
-    "symfony/dom-crawler": "2.8.*|3.0.*",
-    "shawnsandy/simple_pack": "dev-master",
-    "laracasts/generators": "^1.1"
+    "symfony/dom-crawler": "2.8.*|3.0.*"
   },
   "autoload": {
     "classmap": [

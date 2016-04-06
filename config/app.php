@@ -157,12 +157,21 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         * Vendor Service Providers
-         */
+        * Vendor Service Providers
+        */
         Barryvdh\Debugbar\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider::class,
+        Spatie\Authorize\AuthorizeServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+        Spatie\Geocoder\GeocoderServiceProvider::class,
+        Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
+        Styde\Html\HtmlServiceProvider::class,
+        JeroenG\Packager\PackagerServiceProvider::class,
+
 
     ],
 
@@ -209,10 +218,24 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Vendor aliases
+         */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Geocoder' => Spatie\Geocoder\GeocoderFacade::class,
+        'LaravelAnalytics' => Spatie\LaravelAnalytics\LaravelAnalyticsFacade::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
+        'Alert' => Styde\Html\Facades\Alert::class,
+        'Field' => Styde\Html\Facades\Field::class,
+        'Menu' => Styde\Html\Facades\Menu::class,
+
+
+
 
     ],
 
