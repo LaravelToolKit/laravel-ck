@@ -168,10 +168,10 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
         Spatie\Geocoder\GeocoderServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
         Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
         Styde\Html\HtmlServiceProvider::class,
-        JeroenG\Packager\PackagerServiceProvider::class,
-
 
     ],
 
@@ -231,9 +231,7 @@ return [
         'Alert' => Styde\Html\Facades\Alert::class,
         'Field' => Styde\Html\Facades\Field::class,
         'Menu' => Styde\Html\Facades\Menu::class,
-
-
-
+        'Flash' => Laracasts\Flash\Flash::class,
 
     ],
 

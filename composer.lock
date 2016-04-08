@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b045deda7c7ddc82e92af01e50d5a786",
-    "content-hash": "374061c6523cc84b33c3e1c09c0648b6",
+    "hash": "ab266760f9637b732c584eff93030101",
+    "content-hash": "6540605ff385b498470faacd573ad0be",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -1292,6 +1292,93 @@
             "time": "2016-03-13 22:02:05"
         },
         {
+            "name": "laracasts/flash",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "4df7200127a71511bdf116bc8b7a2586612c7a35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/4df7200127a71511bdf116bc8b7a2586612c7a35",
+                "reference": "4df7200127a71511bdf116bc8b7a2586612c7a35",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2016-03-14 15:55:34"
+        },
+        {
+            "name": "laracasts/utilities",
+            "version": "2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                "reference": "4402a0ed774f8eb36ea7ba169341d9d5b6049378"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/4402a0ed774f8eb36ea7ba169341d9d5b6049378",
+                "reference": "4402a0ed774f8eb36ea7ba169341d9d5b6049378",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laracasts\\Utilities\\JavaScript\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Transform your PHP to JavaScript",
+            "keywords": [
+                "javascript",
+                "laravel"
+            ],
+            "time": "2015-10-01 05:16:28"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.2.29",
             "source": {
@@ -2498,16 +2585,16 @@
         },
         {
             "name": "shawnsandy/laravel-install-kit",
-            "version": "v0.2.3",
+            "version": "v0.3.4",
             "source": {
                 "type": "git",
-                "url": "git@github.com:LaravelToolKit/laravel-install-kit.git",
-                "reference": "b6024d52fd492d32638a2bd01adde96966903c3b"
+                "url": "https://github.com/LaravelToolKit/laravel-install-kit.git",
+                "reference": "0de5e753fbdd9f748b3f999033798a44705853bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelToolKit/laravel-install-kit/zipball/b6024d52fd492d32638a2bd01adde96966903c3b",
-                "reference": "b6024d52fd492d32638a2bd01adde96966903c3b",
+                "url": "https://api.github.com/repos/LaravelToolKit/laravel-install-kit/zipball/0de5e753fbdd9f748b3f999033798a44705853bb",
+                "reference": "0de5e753fbdd9f748b3f999033798a44705853bb",
                 "shasum": ""
             },
             "require": {
@@ -2515,6 +2602,8 @@
                 "barryvdh/laravel-ide-helper": "^2.1",
                 "doctrine/dbal": "^2.5",
                 "jeroen-g/laravel-packager": "^1.4",
+                "laracasts/flash": "^2.0",
+                "laracasts/utilities": "^2.1",
                 "laravel/socialite": "^2.0",
                 "laravelcollective/html": "^5.2",
                 "maatwebsite/excel": "^2.1",
@@ -2558,7 +2647,7 @@
                 "laravel-install-kit",
                 "shawnsandy"
             ],
-            "time": "2016-04-06 11:52:00"
+            "time": "2016-04-08 01:24:11"
         },
         {
             "name": "spatie/geocoder",

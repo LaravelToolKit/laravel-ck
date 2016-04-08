@@ -10,7 +10,7 @@
   "require": {
     "php": ">=5.5.9",
     "laravel/framework": "5.2.*",
-    "shawnsandy/laravel-install-kit": "^0.2.2"
+    "shawnsandy/laravel-install-kit": "^0.3.4"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
@@ -28,9 +28,6 @@
     }
   },
   "autoload-dev": {
-    "classmap": [
-      "tests/TestCase.php"
-    ]
   },
   "scripts": {
     "post-root-package-install": [
